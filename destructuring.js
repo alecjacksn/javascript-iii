@@ -13,7 +13,8 @@ var carDetails = {
 
 // CODE HERE
 
-
+let {color, make, model , year} = carDetails;
+ 
 // ========================
 
 
@@ -21,6 +22,9 @@ var carDetails = {
 
 function greeting( obj ) {
   // CODE HERE
+    var title = obj.title;
+    var firstName = obj.firstName;
+    var lastName = obj.lastName;
   
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
 }
@@ -32,7 +36,10 @@ function greeting( obj ) {
 // Write a function called totalPopulation that will take in an object. That object will have 4 properties named utah, california, texas and arizona. The property values will be numbers. Use object destructuring to save the property values to new variables. Sum up the values and return the total number.
 
   // CODE HERE
-
+function totalPopulation(obj){
+    var {utah, california, texas, arizona} = obj;
+    return utah + california + texas + arizona;
+}
 
 // ========================
 
@@ -41,6 +48,12 @@ function greeting( obj ) {
 
   // CODE HERE
 
+function ingrediants(obj){
+    var j = [];
+    var {carb, fat, protein} = obj;
+    j.push(carb, fat, protein);
+    return j;
+}
 
 // ========================
 
@@ -56,9 +69,38 @@ function greeting( obj ) {
   // CODE HERE
 
 
+  function largeNumbers ({first, second, third}) {
+    return Math.min(first, second, third)
+  }
+
+
 // ========================
 
 
 // Write a function called numberGroups that will take a destructured object as it's parameter. The object properties will be named a, b, and c and their values will be arrays of numbers. Find the longest array and return that array. 
 
   // CODE HERE
+
+function numberGroups(obj){
+  var {a, b, c} = obj;  
+    if (a.length > b.length && a.length > c.length){
+        return a;
+    } else if (b.length > a.length && b.length > c.length){
+      return b;
+    }else {
+      return c;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
